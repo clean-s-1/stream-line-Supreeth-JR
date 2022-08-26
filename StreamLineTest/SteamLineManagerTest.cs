@@ -25,7 +25,7 @@ namespace StreamLineTest
             dataProcessor.Setup(x => x.GetSensorReadings()).Returns(data);
             Mock<IDataSender> dataSender = new Mock<IDataSender>();
             SteamLineManager steamLineManager = new SteamLineManager(dataSender.Object, dataProcessor.Object);
-            Assert.IsFalse(steamLineManager.GetSensorData().Count == 1);
+            Assert.IsTrue(steamLineManager.GetSensorData().Count == 1);
         }
     }
 }
